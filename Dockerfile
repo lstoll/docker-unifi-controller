@@ -19,6 +19,6 @@ RUN cd /tmp && \
     rm unifi.deb
 
 EXPOSE 8080 8443 8880 8843
-VOLUME ["/var/lib/unifi"]
+VOLUME ["/usr/lib/unifi/data"]
 # oh my is this a hack
 CMD sh -c '/usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java -Xmx256M -jar /usr/lib/unifi/lib/ace.jar start &' && sleep 1 && tail -f /logs/server.log
