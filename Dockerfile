@@ -1,5 +1,7 @@
 FROM ubuntu:14.04
 
+ENV UNIFI_RELEASE=4.8.9-30617eb5
+
 # Repos
 RUN echo "deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti" > /etc/apt/sources.list.d/ubiquity.list && \
    echo "deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen" > /etc/apt/sources.list.d/10gen.list && \
@@ -14,7 +16,7 @@ RUN apt-get update && \
 RUN apt-get install -y binutils jsvc mongodb-10gen openjdk-7-jre-headless
 
 RUN cd /tmp && \
-    curl -sLo unifi.deb http://dl.ubnt.com/unifi/4.8.5-9bc3d72a/unifi_sysvinit_all.deb && \
+    curl -sLo unifi.deb http://dl.ubnt.com/unifi/${UNIFI_RELEASE}/unifi_sysvinit_all.deb && \
     dpkg -i unifi.deb && \
     rm unifi.deb
 
