@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 
-ENV UNIFI_RELEASE=5.0.7
+ENV UNIFI_RELEASE=5.2.9
 
 # Repos
 RUN echo "deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti" > /etc/apt/sources.list.d/ubiquity.list && \
